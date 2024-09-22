@@ -9,7 +9,7 @@ author:
     link: https://github.com/huatree/dev-spec
 ---
 
-# 文档 规范
+# 文档规范
 
 ## 前言
 

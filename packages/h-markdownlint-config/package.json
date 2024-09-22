@@ -1,0 +1,26 @@
+{
+  "name": "h-markdownlint-config",
+  "version": "0.1.0",
+  "description": "文档规范",
+  "keywords": [
+    "markdown",
+    "lint"
+  ],
+  "author": "huatree <wang.yaohua@foxmail.com>",
+  "homepage": "https://github.com/huatree/dev-spec#readme",
+  "license": "MIT",
+  "main": "index.json",
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huatree/dev-spec.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huatree/dev-spec/issues"
+  },
+  "peerDependencies": {
+    "markdownlint": "^0.28.1"
+  }
+}
