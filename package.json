@@ -3,6 +3,7 @@
   "private": true,
   "description": "前端开发编码规范工程化",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "init": "pnpm install",
     "clean": "rimraf node_modules && pnpm run clean-dist",
     "clean-dist": "rimraf 'packages/*/{lib,es,node_modules,dist}'",
