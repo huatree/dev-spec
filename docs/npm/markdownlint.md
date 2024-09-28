@@ -1,6 +1,19 @@
-# h-markdownlint-config
+---
+title: commitlint-config-encode
+categories:
+  - NPM包
+tags:
+  - NPM包
+author:
+  name: huatree
+  link: https://github.com/huatree/dev-spec
+---
 
-> 文档规范
+# h-commitlint-config
+
+:::tip
+文档规范
+:::
 
 支持配套的 [markdownlint 可共享配置](https://www.npmjs.com/package/markdownlint#optionsconfig)。
 
