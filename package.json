@@ -4,6 +4,7 @@
   "description": "前端开发编码规范工程化",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
     "init": "pnpm install",
     "clean": "rimraf node_modules && pnpm run clean-dist",
     "clean-dist": "rimraf 'packages/*/{lib,es,node_modules,dist}'",
@@ -12,7 +13,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "commitlint": "commitlint --edit"
   },
   "keywords": [
     "dev spec"
@@ -22,13 +24,15 @@
     "conventional-changelog-conventionalcommits": "^4.5.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "husky": "^9.1.6",
+    "lru-cache": "^5.1.1",
     "markdownlint": "^0.28.1",
     "pnpm": "^8.6.0",
     "rimraf": "^3.0.2",
     "vuepress": "^1.9.10",
     "vuepress-plugin-one-click-copy": "^1.0.2",
-    "vuepress-plugin-zooming": "^1.1.7",
-    "lru-cache": "^5.1.1"
+    "vuepress-plugin-zooming": "^1.1.7"
   },
   "publishConfig": {
     "access": "public",

@@ -1,0 +1,23 @@
+{
+  "name": "h-commitlint-config",
+  "version": "0.1.0",
+  "description": "Git 规范",
+  "keywords": [
+    "commit",
+    "lint"
+  ],
+  "author": "huatree <wang.yaohua@foxmail.com>",
+  "homepage": "https://github.com/huatree/dev-spec#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huatree/dev-spec.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huatree/dev-spec/issues"
+  },
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^4.5.0"
+  }
+}
