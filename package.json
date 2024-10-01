@@ -14,7 +14,8 @@
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
     "publish": "lerna publish",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "test": "lerna run test"
   },
   "keywords": [
     "dev spec"

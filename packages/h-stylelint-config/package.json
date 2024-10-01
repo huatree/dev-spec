@@ -1,0 +1,32 @@
+{
+  "name": "h-stylelint-config",
+  "version": "0.1.0",
+  "description": "CSS规范",
+  "keywords": [
+    "style",
+    "lint"
+  ],
+  "author": "huatree <wang.yaohua@foxmail.com>",
+  "homepage": "https://github.com/huatree/dev-spec#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huatree/dev-spec.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "bugs": {
+    "url": "https://github.com/huatree/dev-spec/issues"
+  },
+  "peerDependencies": {
+    "stylelint": ">=8.3.0",
+    "stylelint-scss": ">=2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "stylelint": "^14.3.0",
+    "stylelint-scss": "^4.1.0"
+  }
+}
