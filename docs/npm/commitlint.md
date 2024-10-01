@@ -1,5 +1,5 @@
 ---
-title: commitlint-config-encode
+title: h-commitlint-config
 categories:
   - NPM包
 tags:
