@@ -5,8 +5,8 @@ export default defineConfig4CustomTheme({
     '/': {
       lang: 'zh-CN',
       title: '前端守夜人',
-      description: '前端编码规范工程化'
-    }
+      description: '前端编码规范工程化',
+    },
   },
   base: '/dev-spec/',
   themeConfig: {
@@ -19,24 +19,27 @@ export default defineConfig4CustomTheme({
           { text: 'CSS 编码规范', link: '/coding/css.md' },
           { text: 'JavaScript 编码规范', link: '/coding/javascript.md' },
           { text: 'Node 编码规范', link: '/coding/node.md' },
-          { text: 'Typescript 编码规范', link: '/coding/typescript.md' }
-        ]
+          { text: 'Typescript 编码规范', link: '/coding/typescript.md' },
+        ],
       },
       {
         text: '工程规范',
         items: [
           { text: 'Git 规范', link: '/engineering/git.md' },
           { text: '文档规范', link: '/engineering/doc.md' },
-          { text: 'CHANGELOG 规范', link: '/engineering/changelog.md' }
-        ]
+          { text: 'CHANGELOG 规范', link: '/engineering/changelog.md' },
+        ],
       },
       {
         text: 'NPM包',
         items: [
+          { text: 'h-markdownlint-config', link: '/npm/markdownlint.md' },
           { text: 'h-commitlint-config', link: '/npm/commitlint.md' },
-          { text: 'h-markdownlint-config', link: '/npm/markdownlint.md' }
-        ]
-      }
+          { text: 'h-stylelint-config', link: '/npm/stylelint.md' },
+          { text: 'h-eslint-config', link: '/npm/eslint.md' },
+          { text: 'eslint-plugin-huatree', link: '/npm/eslint-plugin.md' },
+        ],
+      },
     ],
     sidebar: [
       {
@@ -44,50 +47,53 @@ export default defineConfig4CustomTheme({
         children: [
           {
             title: 'HTML 编码规范',
-            path: '/coding/html.md'
+            path: '/coding/html.md',
           },
           {
             title: 'CSS 编码规范',
-            path: '/coding/css.md'
+            path: '/coding/css.md',
           },
           {
             title: 'JavaScript 编码规范',
-            path: '/coding/javascript.md'
+            path: '/coding/javascript.md',
           },
           {
             title: 'Node 编码规范',
-            path: '/coding/node.md'
+            path: '/coding/node.md',
           },
           {
             title: 'Typescript 编码规范',
-            path: '/coding/typescript.md'
-          }
-        ]
+            path: '/coding/typescript.md',
+          },
+        ],
       },
       {
         title: '工程规范',
         children: [
           {
             title: 'Git 规范',
-            path: '/engineering/git.md'
+            path: '/engineering/git.md',
           },
           {
             title: '文档规范',
-            path: '/engineering/doc.md'
+            path: '/engineering/doc.md',
           },
           {
             title: 'CHANGELOG 规范',
-            path: '/engineering/changelog.md'
-          }
-        ]
+            path: '/engineering/changelog.md',
+          },
+        ],
       },
       {
         title: 'NPM包',
         children: [
           { title: 'h-commitlint-config', path: '/npm/commitlint.md' },
-          { title: 'h-markdownlint-config', path: '/npm/markdownlint.md' }
-        ]
-      }
+          { title: 'h-markdownlint-config', path: '/npm/markdownlint.md' },
+          { title: 'h-stylelint-config', path: '/npm/stylelint.md' },
+          { title: 'h-eslint-config', path: '/npm/eslint.md' },
+          { title: 'eslint-plugin-huatree', path: '/npm/eslint-plugin.md' },
+        ],
+      },
     ],
     logo: '/img/logo.jpg',
     repo: 'huatree/dev-spec',
@@ -95,14 +101,15 @@ export default defineConfig4CustomTheme({
     docsDir: 'docs',
     footer: {
       createYear: 2024,
-      copyrightInfo: 'huatree | <a href="https://github.com/huatree/dev-spec" target="_blank">github</a>'
+      copyrightInfo:
+        'huatree | <a href="https://github.com/huatree/dev-spec" target="_blank">github</a>',
     },
     extendFrontmatter: {
       author: {
         name: 'huatree',
-        link: 'https://github.com/huatree/dev-spec'
-      }
-    }
+        link: 'https://github.com/huatree/dev-spec',
+      },
+    },
   },
   head: [
     ['link', { rel: 'icon', href: '/img/logo.jpg' }],
@@ -110,9 +117,9 @@ export default defineConfig4CustomTheme({
       'meta',
       {
         name: 'keywords',
-        content: '前端编码规范工程化'
-      }
-    ]
+        content: '前端编码规范工程化',
+      },
+    ],
   ],
   plugins: <UserPlugins>[
     [
@@ -121,18 +128,18 @@ export default defineConfig4CustomTheme({
         copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'],
         copyMessage: '复制成功',
         duration: 1000,
-        showInMobile: false
-      }
+        showInMobile: false,
+      },
     ],
     [
       'vuepress-plugin-zooming',
       {
         selector: '.theme-vdoing-content img:not(.no-zoom)',
         options: {
-          bgColor: 'rgba(0,0,0,0.6)'
-        }
-      }
-    ]
+          bgColor: 'rgba(0,0,0,0.6)',
+        },
+      },
+    ],
   ],
-  extraWatchFiles: ['.vuepress/config.ts']
+  extraWatchFiles: ['.vuepress/config.ts'],
 });
