@@ -433,4 +433,4 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/yarn,windows,webstorm,web,visualstudiocode,node,macos,test
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
-
+pnpm-lock.yaml
