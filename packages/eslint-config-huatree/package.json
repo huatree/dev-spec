@@ -1,5 +1,5 @@
 {
-  "name": "h-eslint-config",
+  "name": "eslint-config-huatree",
   "version": "0.1.0",
   "description": "JavaScript TypeScript Node 规范",
   "keywords": [
