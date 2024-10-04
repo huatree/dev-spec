@@ -35,7 +35,7 @@ export default defineConfig4CustomTheme({
         items: [
           { text: 'h-markdownlint-config', link: '/npm/markdownlint.md' },
           { text: 'h-commitlint-config', link: '/npm/commitlint.md' },
-          { text: 'h-stylelint-config', link: '/npm/stylelint.md' },
+          { text: 'stylelint-config-huatree', link: '/npm/stylelint.md' },
           { text: 'eslint-config-huatree', link: '/npm/eslint.md' },
           { text: 'eslint-plugin-huatree', link: '/npm/eslint-plugin.md' },
         ],
@@ -89,7 +89,7 @@ export default defineConfig4CustomTheme({
         children: [
           { title: 'h-commitlint-config', path: '/npm/commitlint.md' },
           { title: 'h-markdownlint-config', path: '/npm/markdownlint.md' },
-          { title: 'h-stylelint-config', path: '/npm/stylelint.md' },
+          { title: 'stylelint-config-huatree', path: '/npm/stylelint.md' },
           { title: 'eslint-config-huatree', path: '/npm/eslint.md' },
           { title: 'eslint-plugin-huatree', path: '/npm/eslint-plugin.md' },
         ],

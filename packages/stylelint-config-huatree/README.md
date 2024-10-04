@@ -1,4 +1,4 @@
-# h-stylelint-config
+# stylelint-config-huatree
 
 > CSS规范
 
@@ -9,7 +9,7 @@
 需要先行安装 [stylelint](https://www.npmjs.com/package/stylelint) 和 [stylelint-scss](https://www.npmjs.com/package/stylelint-scss)：
 
 ```bash
-npm i h-stylelint-config stylelint stylelint-scss -D
+npm i stylelint-config-huatree stylelint stylelint-scss -D
 ```
 
 ## 使用
@@ -18,6 +18,6 @@ npm i h-stylelint-config stylelint stylelint-scss -D
 
 ```json
 {
-  "extends": "h-stylelint-config"
+  "extends": "stylelint-config-huatree"
 }
 ```

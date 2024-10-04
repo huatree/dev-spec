@@ -1,5 +1,5 @@
 ---
-title: h-stylelint-config
+title: stylelint-config-huatree
 categories:
   - NPM包
 tags:
@@ -9,7 +9,7 @@ author:
   link: https://github.com/huatree/dev-spec
 ---
 
-# h-stylelint-config
+# stylelint-config-huatree
 
 :::tip
 CSS 规范
@@ -22,7 +22,7 @@ CSS 规范
 需要先行安装 [stylelint](https://www.npmjs.com/package/stylelint) 和 [stylelint-scss](https://www.npmjs.com/package/stylelint-scss)：
 
 ```bash
-npm i h-stylelint-config stylelint stylelint-scss -D
+npm i stylelint-config-huatree stylelint stylelint-scss -D
 ```
 
 ## 使用
@@ -31,6 +31,6 @@ npm i h-stylelint-config stylelint stylelint-scss -D
 
 ```json
 {
-  "extends": "h-stylelint-config"
+  "extends": "stylelint-config-huatree"
 }
 ```
