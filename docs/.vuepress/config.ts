@@ -40,6 +40,10 @@ export default defineConfig4CustomTheme({
           { text: 'eslint-plugin-huatree', link: '/npm/eslint-plugin.md' },
         ],
       },
+      {
+        text: '脚手架',
+        items: [{ text: 'h-lint', link: '/cli/h-lint.md' }],
+      },
     ],
     sidebar: [
       {
@@ -93,6 +97,10 @@ export default defineConfig4CustomTheme({
           { title: 'eslint-config-huatree', path: '/npm/eslint.md' },
           { title: 'eslint-plugin-huatree', path: '/npm/eslint-plugin.md' },
         ],
+      },
+      {
+        title: '脚手架',
+        children: [{ title: 'h-lint', path: '/cli/h-lint.md' }],
       },
     ],
     logo: '/img/logo.jpg',
