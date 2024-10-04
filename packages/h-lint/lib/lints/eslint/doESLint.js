@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -50,44 +39,42 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scan = exports.init = void 0;
-var ora_1 = __importDefault(require("ora"));
-var init_1 = __importDefault(require("./actions/init"));
-var scan_1 = __importDefault(require("./actions/scan"));
-var constants_1 = require("./utils/constants");
-var print_report_1 = __importDefault(require("./utils/print-report"));
-var init = function (options) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4, (0, init_1.default)(__assign(__assign({}, options), { checkVersionUpdate: false }))];
-            case 1: return [2, _a.sent()];
-        }
+exports.doESLint = void 0;
+var eslint_1 = require("eslint");
+var fast_glob_1 = __importDefault(require("fast-glob"));
+var path_1 = require("path");
+var constants_1 = require("../../utils/constants");
+var formatESLintResults_1 = require("./formatESLintResults");
+var getESLintConfig_1 = require("./getESLintConfig");
+function doESLint(options) {
+    return __awaiter(this, void 0, void 0, function () {
+        var files, eslint, reports;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!options.files) return [3, 1];
+                    files = options.files.filter(function (name) { return constants_1.ESLINT_FILE_EXT.includes((0, path_1.extname)(name)); });
+                    return [3, 3];
+                case 1: return [4, (0, fast_glob_1.default)("**/*.{".concat(constants_1.ESLINT_FILE_EXT.map(function (t) { return t.replace(/^\./, ''); }).join(','), "}"), {
+                        cwd: options.cwd,
+                        ignore: constants_1.ESLINT_IGNORE_PATTERN,
+                    })];
+                case 2:
+                    files = _a.sent();
+                    _a.label = 3;
+                case 3:
+                    eslint = new eslint_1.ESLint((0, getESLintConfig_1.getESLintConfig)(options, options.pkg, options.config));
+                    return [4, eslint.lintFiles(files)];
+                case 4:
+                    reports = _a.sent();
+                    if (!options.fix) return [3, 6];
+                    return [4, eslint_1.ESLint.outputFixes(reports)];
+                case 5:
+                    _a.sent();
+                    _a.label = 6;
+                case 6: return [2, (0, formatESLintResults_1.formatESLintResults)(reports, options.quiet, eslint)];
+            }
+        });
     });
-}); };
-exports.init = init;
-var scan = function (options) { return __awaiter(void 0, void 0, void 0, function () {
-    var checking, report, results, errorCount, warningCount, type;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                checking = (0, ora_1.default)();
-                checking.start("\u6267\u884C ".concat(constants_1.PKG_NAME, " \u4EE3\u7801\u68C0\u67E5"));
-                return [4, (0, scan_1.default)(options)];
-            case 1:
-                report = _a.sent();
-                results = report.results, errorCount = report.errorCount, warningCount = report.warningCount;
-                type = 'succeed';
-                if (errorCount > 0) {
-                    type = 'fail';
-                }
-                else if (warningCount > 0) {
-                    type = 'warn';
-                }
-                checking[type]();
-                if (results.length > 0)
-                    (0, print_report_1.default)(results, false);
-                return [2, report];
-        }
-    });
-}); };
-exports.scan = scan;
+}
+exports.doESLint = doESLint;

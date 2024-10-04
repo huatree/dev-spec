@@ -50,44 +50,57 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scan = exports.init = void 0;
-var ora_1 = __importDefault(require("ora"));
-var init_1 = __importDefault(require("./actions/init"));
-var scan_1 = __importDefault(require("./actions/scan"));
-var constants_1 = require("./utils/constants");
-var print_report_1 = __importDefault(require("./utils/print-report"));
-var init = function (options) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4, (0, init_1.default)(__assign(__assign({}, options), { checkVersionUpdate: false }))];
-            case 1: return [2, _a.sent()];
-        }
+exports.doPrettier = void 0;
+var fast_glob_1 = __importDefault(require("fast-glob"));
+var fs_extra_1 = require("fs-extra");
+var path_1 = require("path");
+var prettier_1 = __importDefault(require("prettier"));
+var constants_1 = require("../../utils/constants");
+function doPrettier(options) {
+    return __awaiter(this, void 0, void 0, function () {
+        var files, pattern;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    files = [];
+                    if (!options.files) return [3, 1];
+                    files = options.files.filter(function (name) { return constants_1.PRETTIER_FILE_EXT.includes((0, path_1.extname)(name)); });
+                    return [3, 3];
+                case 1:
+                    pattern = (0, path_1.join)(options.include, "**/*.{".concat(constants_1.PRETTIER_FILE_EXT.map(function (t) { return t.replace(/^\./, ''); }).join(','), "}"));
+                    return [4, (0, fast_glob_1.default)(pattern, {
+                            cwd: options.cwd,
+                            ignore: constants_1.PRETTIER_IGNORE_PATTERN,
+                        })];
+                case 2:
+                    files = _a.sent();
+                    _a.label = 3;
+                case 3: return [4, Promise.all(files.map(formatFile))];
+                case 4:
+                    _a.sent();
+                    return [2];
+            }
+        });
     });
-}); };
-exports.init = init;
-var scan = function (options) { return __awaiter(void 0, void 0, void 0, function () {
-    var checking, report, results, errorCount, warningCount, type;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                checking = (0, ora_1.default)();
-                checking.start("\u6267\u884C ".concat(constants_1.PKG_NAME, " \u4EE3\u7801\u68C0\u67E5"));
-                return [4, (0, scan_1.default)(options)];
-            case 1:
-                report = _a.sent();
-                results = report.results, errorCount = report.errorCount, warningCount = report.warningCount;
-                type = 'succeed';
-                if (errorCount > 0) {
-                    type = 'fail';
-                }
-                else if (warningCount > 0) {
-                    type = 'warn';
-                }
-                checking[type]();
-                if (results.length > 0)
-                    (0, print_report_1.default)(results, false);
-                return [2, report];
-        }
+}
+exports.doPrettier = doPrettier;
+function formatFile(filepath) {
+    return __awaiter(this, void 0, void 0, function () {
+        var text, options, formatted;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4, (0, fs_extra_1.readFile)(filepath, 'utf8')];
+                case 1:
+                    text = _a.sent();
+                    return [4, prettier_1.default.resolveConfig(filepath)];
+                case 2:
+                    options = _a.sent();
+                    formatted = prettier_1.default.format(text, __assign(__assign({}, options), { filepath: filepath }));
+                    return [4, (0, fs_extra_1.writeFile)(filepath, formatted, 'utf8')];
+                case 3:
+                    _a.sent();
+                    return [2];
+            }
+        });
     });
-}); };
-exports.scan = scan;
+}

@@ -50,44 +50,37 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scan = exports.init = void 0;
-var ora_1 = __importDefault(require("ora"));
-var init_1 = __importDefault(require("./actions/init"));
-var scan_1 = __importDefault(require("./actions/scan"));
-var constants_1 = require("./utils/constants");
-var print_report_1 = __importDefault(require("./utils/print-report"));
-var init = function (options) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4, (0, init_1.default)(__assign(__assign({}, options), { checkVersionUpdate: false }))];
-            case 1: return [2, _a.sent()];
-        }
+exports.doStylelint = void 0;
+var fast_glob_1 = __importDefault(require("fast-glob"));
+var path_1 = require("path");
+var stylelint_1 = __importDefault(require("stylelint"));
+var constants_1 = require("../../utils/constants");
+var formatStylelintResults_1 = require("./formatStylelintResults");
+var getStylelintConfig_1 = require("./getStylelintConfig");
+function doStylelint(options) {
+    return __awaiter(this, void 0, void 0, function () {
+        var files, pattern, data;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!options.files) return [3, 1];
+                    files = options.files.filter(function (name) { return constants_1.STYLELINT_FILE_EXT.includes((0, path_1.extname)(name)); });
+                    return [3, 3];
+                case 1:
+                    pattern = (0, path_1.join)(options.include, "**/*.{".concat(constants_1.STYLELINT_FILE_EXT.map(function (t) { return t.replace(/^\./, ''); }).join(','), "}"));
+                    return [4, (0, fast_glob_1.default)(pattern, {
+                            cwd: options.cwd,
+                            ignore: constants_1.STYLELINT_IGNORE_PATTERN,
+                        })];
+                case 2:
+                    files = _a.sent();
+                    _a.label = 3;
+                case 3: return [4, stylelint_1.default.lint(__assign(__assign({}, (0, getStylelintConfig_1.getStylelintConfig)(options, options.pkg, options.config)), { files: files }))];
+                case 4:
+                    data = _a.sent();
+                    return [2, (0, formatStylelintResults_1.formatStylelintResults)(data.results, options.quiet)];
+            }
+        });
     });
-}); };
-exports.init = init;
-var scan = function (options) { return __awaiter(void 0, void 0, void 0, function () {
-    var checking, report, results, errorCount, warningCount, type;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                checking = (0, ora_1.default)();
-                checking.start("\u6267\u884C ".concat(constants_1.PKG_NAME, " \u4EE3\u7801\u68C0\u67E5"));
-                return [4, (0, scan_1.default)(options)];
-            case 1:
-                report = _a.sent();
-                results = report.results, errorCount = report.errorCount, warningCount = report.warningCount;
-                type = 'succeed';
-                if (errorCount > 0) {
-                    type = 'fail';
-                }
-                else if (warningCount > 0) {
-                    type = 'warn';
-                }
-                checking[type]();
-                if (results.length > 0)
-                    (0, print_report_1.default)(results, false);
-                return [2, report];
-        }
-    });
-}); };
-exports.scan = scan;
+}
+exports.doStylelint = doStylelint;
