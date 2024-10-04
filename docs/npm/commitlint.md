@@ -1,5 +1,5 @@
 ---
-title: h-commitlint-config
+title: commitlint-config-huatree
 categories:
   - NPM包
 tags:
@@ -9,7 +9,7 @@ author:
   link: https://github.com/huatree/dev-spec
 ---
 
-# h-commitlint-config
+# commitlint-config-huatree
 
 :::tip
 Git 规范
@@ -22,7 +22,7 @@ Git 规范
 使用时，需要安装 [@commitlint/cli](https://www.npmjs.com/package/@commitlint/cli)：
 
 ```bash
-npm install h-commitlint-config @commitlint/cli --save-dev
+npm install commitlint-config-huatree @commitlint/cli --save-dev
 ```
 
 ## 使用
@@ -31,7 +31,7 @@ npm install h-commitlint-config @commitlint/cli --save-dev
 
 ```javascript
 module.exports = {
-  extends: ['h-commitlint-config']
+  extends: ['commitlint-config-huatree']
 };
 ```
 

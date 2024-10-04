@@ -29,7 +29,7 @@ features:
 | 规约 | Lint 工具 | NPM包 |
 | -------- | -------- | -------- |
 | 文档规范     |  [markdownlint](https://github.com/DavidAnson/markdownlint)  | [h-markdownlint-config](https://www.npmjs.com/package/h-markdownlint-config) |
-| Git 规范    |  [commitlint](https://commitlint.js.org/#/)  | [h-commitlint-config](https://www.npmjs.com/package/h-commitlint-config) |
+| Git 规范    |  [commitlint](https://commitlint.js.org/#/)  | [commitlint-config-huatree](https://www.npmjs.com/package/commitlint-config-huatree) |
 | CSS 编码规范     |  [stylelint](https://stylelint.io/)  | [stylelint-config-huatree](https://www.npmjs.com/package/stylelint-config-huatree) |
 | JavaScript 编码规范 <br/>TypeScript 编码规范  <br/>Node 编码规范   |  [ESLint](https://eslint.org/)   | [eslint-config-huatree](https://www.npmjs.com/package/eslint-config-huatree) |
 | ESLint插件 | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | [eslint-plugin-huatree](https://www.npmjs.com/package/eslint-plugin-huatree) |

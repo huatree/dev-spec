@@ -1,5 +1,5 @@
 ---
-title: h-commitlint-config
+title: commitlint-config-huatree
 categories:
   - NPM包
 tags:
@@ -9,7 +9,7 @@ author:
   link: https://github.com/huatree/dev-spec
 ---
 
-# h-commitlint-config
+# commitlint-config-huatree
 
 :::tip
 文档规范

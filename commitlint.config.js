@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['./packages/h-commitlint-config/index.js'],
+  extends: ['./packages/commitlint-config-huatree/index.js'],
 };

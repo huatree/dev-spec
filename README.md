@@ -30,7 +30,7 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                                | eslint-config-huatree                                              |
 | CSS 编码规范                                                 | [stylelint](https://stylelint.io/)                           | stylelint-config-huatree                                           |
-| Git 规范                                                     | [commitlint](https://commitlint.js.org/#/)                   | h-commitlint-config                                          |
+| Git 规范                                                     | [commitlint](https://commitlint.js.org/#/)                   | commitlint-config-huatree                                          |
 | 文档规范                                                     | [markdownlint](https://github.com/DavidAnson/markdownlint)   | [h-markdownlint-config](https://www.npmjs.com/package/h-markdownlint-config) |
 | Eslint 插件                                                  | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | h-eslint-plugin                                              |
 
