@@ -31,7 +31,7 @@
 | JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                                | eslint-config-huatree                                              |
 | CSS 编码规范                                                 | [stylelint](https://stylelint.io/)                           | stylelint-config-huatree                                           |
 | Git 规范                                                     | [commitlint](https://commitlint.js.org/#/)                   | commitlint-config-huatree                                          |
-| 文档规范                                                     | [markdownlint](https://github.com/DavidAnson/markdownlint)   | [h-markdownlint-config](https://www.npmjs.com/package/h-markdownlint-config) |
+| 文档规范                                                     | [markdownlint](https://github.com/DavidAnson/markdownlint)   | [markdownlint-config-huatree](https://www.npmjs.com/package/markdownlint-config-huatree) |
 | Eslint 插件                                                  | [ESlint Plugin](https://eslint.org/docs/latest/extend/plugins) | h-eslint-plugin                                              |
 
 h-spec-cli 收敛屏蔽了上述依赖和配置细节，提供简单的 `CLI` 和 `Node.js API`，让项目能够一键接入、一键扫描、一键修复、一键升级，并为项目配置 git commit 卡口，降低项目接入规范的成本。

@@ -22,7 +22,7 @@ author:
 需要先行安装 [markdownlint](https://www.npmjs.com/package/markdownlint)：
 
 ```bash
-npm i h-markdownlint-config markdownlint -D
+npm i markdownlint-config-huatree markdownlint -D
 ```
 
 ## 使用
@@ -31,6 +31,6 @@ npm i h-markdownlint-config markdownlint -D
 
 ```json
 {
-  "extends": "h-markdownlint-config"
+  "extends": "markdownlint-config-huatree"
 }
 ```

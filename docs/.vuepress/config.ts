@@ -33,7 +33,7 @@ export default defineConfig4CustomTheme({
       {
         text: 'NPM包',
         items: [
-          { text: 'h-markdownlint-config', link: '/npm/markdownlint.md' },
+          { text: 'markdownlint-config-huatree', link: '/npm/markdownlint.md' },
           { text: 'commitlint-config-huatree', link: '/npm/commitlint.md' },
           { text: 'stylelint-config-huatree', link: '/npm/stylelint.md' },
           { text: 'eslint-config-huatree', link: '/npm/eslint.md' },
@@ -88,7 +88,7 @@ export default defineConfig4CustomTheme({
         title: 'NPM包',
         children: [
           { title: 'commitlint-config-huatree', path: '/npm/commitlint.md' },
-          { title: 'h-markdownlint-config', path: '/npm/markdownlint.md' },
+          { title: 'markdownlint-config-huatree', path: '/npm/markdownlint.md' },
           { title: 'stylelint-config-huatree', path: '/npm/stylelint.md' },
           { title: 'eslint-config-huatree', path: '/npm/eslint.md' },
           { title: 'eslint-plugin-huatree', path: '/npm/eslint-plugin.md' },
