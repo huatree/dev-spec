@@ -1,0 +1,8 @@
+module.exports = {
+  extends: [
+    '<%= eslintType === 'index' ? 'eslint-config-huatree' : `eslint-config-huatree/${eslintType}` %>',
+    <%_ if (enablePrettier) { _%> 
+      'prettier',
+    <%_ } _%>
+  ],
+};

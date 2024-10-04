@@ -1,0 +1,7 @@
+{
+  "test": true,
+  "editor.defaultFormatter": "177",
+  "eslint.validate": [
+    "177"
+  ]
+}
