@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: /img/logo.jpg
-heroText: 前端守夜人
-tagline: 前端开发编码规范工程化
+heroText: 前端开发编码规范工程化
+tagline: 一个致力于解决前端团队开发编码规范的高质量可靠的生态
 actionText: 立刻进入 →
 actionLink: /coding/html.md
 features:
